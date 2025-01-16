@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Sliding Text Over Image</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .sliding-text {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            text-align: center;
+            display: none;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.gstatic.com/webp/gallery/1.jpg" alt="Random Google Image" class="image" />
+
+
+        <div class="sliding-text">
+            codeforces is cool, check my handle knull_void
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function animateText() {
+                $(".sliding-text")
+                    .css("left", "100%")
+                    .show()
+                    .animate({ left: "0%" }, 1000)
+                    .delay(2000)
+                    .animate({ left: "-100%" }, 1000, function() {
+                        $(this).hide();
+                        setTimeout(animateText, 1000);
+                    });
+            }
+            animateText();
+        });
+    </script>
+</body>
+</html>
