@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Billing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+        
+    
+</head>
+<body>
+    <div class="form-group">
+        <label>Select Brand:</label><br>
+        <select id="brand">
+            <option value="hp">HP</option>
+            <option value="nokia">Nokia</option>
+            <option value="samsung">Samsung</option>
+            <option value="motorola">Motorola</option>
+            <option value="apple">Apple</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Select Product Type:</label><br>
+        <input type="checkbox" id="mobile" name="type" value="mobile">
+        <label for="mobile">Mobile</label><br>
+        <input type="checkbox" id="laptop" name="type" value="laptop">
+        <label for="laptop">Laptop</label>
+    </div>
+
+    <div class="form-group">
+        <label>Enter Quantity:</label><br>
+        <input type="number" id="quantity" min="1" value="1">
+    </div>
+
+    <button id="calculateBill">Produce Bill</button>
+
+    <script src="script.js"></script>
+        
+   
+</body>
+</html>
